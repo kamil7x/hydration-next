@@ -1,5 +1,6 @@
 # Hydration Next
-Simple library for serializing and rehydrating JavaScript objects with types memory.
+https://www.npmjs.com/package/hydration-next
+Simple library for serializing and rehydrating JavaScript objects with types memory. Designed as a drop-in replacement for `JSON.parse` and `JSON.stringify`
 
 ## Installation
 ```  
@@ -19,7 +20,8 @@ const user = {
   name: 'John',    
   age: 25,    
   isAdmin: false,    
-_createdAt: new Date(), }  
+  _createdAt: new Date(),
+}
   
 const asString = Hydra.stringify(object) // {"name":"John","age":"25","isAdmin":"false","_createdAt":1614805531055,"_types":{"name":"string","age":"number","isAdmin":"boolean","_createdAt":"date"}}  
 const rehydrated = Hydra.parse(asString); // { name: 'John', age: 25, isAdmin: false, _createdAt: 2021-03-03T21:05:31.055Z }  

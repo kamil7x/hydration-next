@@ -2,6 +2,9 @@ import { TypedObject } from './interfaces';
 import { typeDefinitions } from './typeDefinitions';
 import { getTypeName, isPrimitiveOrNull } from './utils';
 
+/**
+ * @hidden
+ */
 type ReduceResult = {
   readonly typedObject: TypedObject;
   readonly objectTypes: Record<string, string>;

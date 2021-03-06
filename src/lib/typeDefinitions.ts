@@ -3,6 +3,9 @@ import { hydrate } from './hydrate';
 import { TypeDefinition, TypedObject } from './interfaces';
 import { identity, toString } from './utils';
 
+/**
+ * @hidden
+ */
 export const typeDefinitions: Record<string, TypeDefinition> = {
   string: {
     test: (value: any) => typeof value === 'string',
@@ -28,20 +31,20 @@ export const typeDefinitions: Record<string, TypeDefinition> = {
     dehydrate: () => '',
   },
 
-  date: {
+  Date: {
     test: (value: any) => value instanceof Date,
     hydrate: (value: number): Date => new Date(value),
     dehydrate: (value: Date): number => +value,
   },
 
-  regexp: {
+  RegExp: {
     test: (value: any) => value instanceof RegExp,
     hydrate: (value: string): RegExp =>
       new RegExp(value.replace(/(^\/|\/$)/g, '')),
     dehydrate: toString,
   },
 
-  buffer: {
+  Buffer: {
     test: (value: any) => Buffer.isBuffer(value),
     hydrate: (value: string): Buffer => new Buffer(value, 'base64'),
     dehydrate: (value: Buffer): string => value.toString('base64'),
