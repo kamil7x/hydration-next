@@ -15,7 +15,7 @@ const testString = `
       "_createdAt": "Date"
     }
   }
-`
+`;
 
 test('parse', (t) => {
   t.plan(1);

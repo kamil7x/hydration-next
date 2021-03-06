@@ -1,13 +1,16 @@
+/* eslint-disable functional/no-class, functional/no-this-expression, functional/immutable-data */
 import test from 'ava';
 import sinon from 'sinon';
 
-import { typeDefinitions } from './typeDefinitions';
 import { addType } from './addType';
+import { typeDefinitions } from './typeDefinitions';
 import { identity, toString } from './utils';
 
 class Foo {
-  constructor(private data: string) {}
-  get() { return this.data };
+  constructor(private readonly data: string) {}
+  get() {
+    return this.data;
+  }
 }
 
 test.beforeEach((t) => {
@@ -47,4 +50,4 @@ test('addType - existing type', (t) => {
   });
 
   t.is(Object.keys(typeDefinitions).length, builtInTypesCount);
-})
+});

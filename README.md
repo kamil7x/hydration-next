@@ -24,7 +24,7 @@ const user = {
 }
   
 const asString = Hydra.stringify(object) // {"name":"John","age":"25","isAdmin":"false","_createdAt":1614805531055,"_types":{"name":"string","age":"number","isAdmin":"boolean","_createdAt":"date"}}  
-const rehydrated = Hydra.parse(asString); // { name: 'John', age: 25, isAdmin: false, _createdAt: 2021-03-03T21:05:31.055Z }  
+const parsed = Hydra.parse(asString); // { name: 'John', age: 25, isAdmin: false, _createdAt: 2021-03-03T21:05:31.055Z }  
   
 ```  
 

@@ -7,7 +7,7 @@ const testObject = {
   age: 26,
   isAdmin: false,
   _createdAt: new Date(),
-}
+};
 
 test('stringify', (t) => {
   t.plan(1);
