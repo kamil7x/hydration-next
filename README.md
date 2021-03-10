@@ -14,7 +14,7 @@ yarn add hydration-next
 ## Usage
 // TODO: improve this section
 ```  
-import Hydra from 'hydration-next';  
+import { parse, stringify } from 'hydration-next';  
   
 const user = {    
   name: 'John',    
@@ -23,8 +23,8 @@ const user = {
   _createdAt: new Date(),
 }
   
-const asString = Hydra.stringify(object) // {"name":"John","age":"25","isAdmin":"false","_createdAt":1614805531055,"_types":{"name":"string","age":"number","isAdmin":"boolean","_createdAt":"date"}}  
-const parsed = Hydra.parse(asString); // { name: 'John', age: 25, isAdmin: false, _createdAt: 2021-03-03T21:05:31.055Z }  
+const asString = stringify(object) // '{"name":"John","age":"25","isAdmin":"false","_createdAt":1614805531055,"_types":{"name":"string","age":"number","isAdmin":"boolean","_createdAt":"date"}}'  
+const parsed = parse(asString); // { name: 'John', age: 25, isAdmin: false, _createdAt: 2021-03-03T21:05:31.055Z }  
   
 ```  
 
